@@ -23,13 +23,16 @@ module.exports = {
     const embeddedMessage = new EmbedBuilder()
       .setColor("#04a2d5")
       .setTitle(`Welcome To Code For Israel's Ticket Tool System`)
-      .setDescription(`Simply click on the button below and a private chat will be opened between you and the server's management and support teams`)
+      .setDescription(
+        `Simply click on the button below and a private chat will be opened between you and the server's management and support teams. Please select the relevant service you need.`
+      )
       .setFooter({
         text: "made by Aviv#1234",
         iconURL: "https://static.euronews.com/articles/stories/05/79/99/44/2000x1333_cmsv2_292bef7f-8fab-5f0d-bed5-63856832498b-5799944.jpg",
       });
     const row = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId(`createTicket`).setStyle(ButtonStyle.Primary).setLabel("Click To Start New Ticket").setEmoji("💌")
+      new ButtonBuilder().setCustomId(`createManagementTicket`).setStyle(ButtonStyle.Primary).setLabel("Management Ticket").setEmoji("💌"),
+      new ButtonBuilder().setCustomId(`createATeamTicket`).setStyle(ButtonStyle.Primary).setLabel("A-Team Ticket").setEmoji("😎")
     );
     interaction.channel.send({ embeds: [embeddedMessage], components: [row] });
   },

@@ -9,10 +9,13 @@ const client = new Client({
   intents: [Guilds, GuildMembers, GuildMessages, MessageContent, GuildScheduledEvents],
   partials: [User, Message, GuildMember, ThreadMember],
 });
+
+require("./Handlers/errorHandlers");
 require("discord-modals")(client);
 client.commands = new Collection();
 client.projects = new Array();
 client.canOpenNewProject = true;
+client.intervals = {};
 
 const { loadEvents } = require("./Handlers/eventHandler");
 const { loadCommands } = require("./Handlers/commandHandler");

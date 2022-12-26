@@ -11,7 +11,7 @@ module.exports = {
         client.projects.push(category.name.slice(6).toLowerCase());
       }
     }
-    ticketId = await client.guilds.cache.first().channels.cache.get("1010901260880330872").messages.fetch("1035288982038265896");
+    client.ticketId = await client.guilds.cache.first().channels.cache.get("1010901260880330872").messages.fetch("1044728384485339146");
     console.log("ready!");
     console.log(`Client is now logged in as ${client.user.username}`);
   },
